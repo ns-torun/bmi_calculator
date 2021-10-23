@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'user_input.dart';
 import 'dart:async';
+import './login_page.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -18,9 +18,9 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   _navigateToUser() async {
-    await Future.delayed(const Duration(seconds: 4), () {});
+    await Future.delayed(const Duration(seconds: 3), () {});
     Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (context) => const UserInput()));
+        context, MaterialPageRoute(builder: (context) => const LoginPage()));
   }
 
   @override
@@ -47,7 +47,7 @@ class _SplashScreenState extends State<SplashScreen> {
             const Padding(padding: EdgeInsets.only(top: 150)),
             TweenAnimationBuilder(
               tween: Tween(begin: 0.1, end: 1.0),
-              duration: const Duration(seconds: 3),
+              duration: const Duration(seconds: 2),
               builder: (context, double size, _) => SizedBox(
                 height: 50,
                 width: 50,
@@ -57,7 +57,7 @@ class _SplashScreenState extends State<SplashScreen> {
                   strokeWidth: 6,
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),
