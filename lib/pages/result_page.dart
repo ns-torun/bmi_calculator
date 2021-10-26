@@ -2,8 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import '../constants.dart';
+import './login_page.dart';
 
-class ResultPage extends StatelessWidget {
+class ResultPage extends StatefulWidget {
   const ResultPage(
       {Key? key,
       required this.resultData,
@@ -15,6 +16,11 @@ class ResultPage extends StatelessWidget {
   final String resultData;
   final String resultAdvice;
 
+  @override
+  State<ResultPage> createState() => _ResultPageState();
+}
+
+class _ResultPageState extends State<ResultPage> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -35,6 +41,18 @@ class ResultPage extends StatelessWidget {
         appBar: AppBar(
           title: const Text('BMI CALCULATOR'),
           centerTitle: true,
+          actions: [
+            IconButton(
+                onPressed: () {
+                  setState(() {
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const LoginPage()));
+                  });
+                },
+                icon: const Icon(Icons.logout_outlined)),
+          ],
         ),
         body: Column(
           children: [
@@ -63,11 +81,11 @@ class ResultPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    Text(resultText.toUpperCase(),
+                    Text(widget.resultText.toUpperCase(),
                         style: kResultText, textAlign: TextAlign.center),
-                    Text(resultData,
+                    Text(widget.resultData,
                         style: kResultData, textAlign: TextAlign.center),
-                    Text(resultAdvice,
+                    Text(widget.resultAdvice,
                         style: kResultAdvice, textAlign: TextAlign.center),
                   ],
                 ),

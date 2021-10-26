@@ -5,6 +5,7 @@ import '../components/input_card.dart';
 import '../constants.dart';
 import 'result_page.dart';
 import '../components/calculate_brain.dart';
+import './login_page.dart';
 
 enum Gender {
   male,
@@ -42,6 +43,18 @@ class _UserInputState extends State<UserInput> {
         appBar: AppBar(
           title: const Text('BMI CALCULATOR'),
           centerTitle: true,
+          actions: [
+            IconButton(
+                onPressed: () {
+                  setState(() {
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const LoginPage()));
+                  });
+                },
+                icon: const Icon(Icons.logout_outlined)),
+          ],
         ),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,

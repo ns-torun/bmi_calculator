@@ -32,6 +32,7 @@ class _LoginPageState extends State<LoginPage> {
             margin: const EdgeInsets.symmetric(horizontal: 30),
             child: ListView(
               children: [
+                const Padding(padding: EdgeInsets.only(top: 10)),
                 GestureDetector(
                   child: const Text('Don\'t have a ID?',
                       textAlign: TextAlign.right),
@@ -80,13 +81,13 @@ class _LoginPageState extends State<LoginPage> {
                         borderRadius: BorderRadius.circular(20),
                       ),
                       child: const TextField(
+                        obscureText: true,
                         decoration: InputDecoration(
-                          icon: Icon(
-                            Icons.lock,
-                            color: Colors.white,
-                          ),
+                          icon: Icon(Icons.lock, color: Colors.white),
                           hintText: 'Password',
                           border: InputBorder.none,
+                          suffixIcon:
+                              Icon(Icons.visibility, color: Colors.white),
                         ),
                       ),
                     ),

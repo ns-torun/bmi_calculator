@@ -31,6 +31,7 @@ class _SignUpPageState extends State<SignUpPage> {
             margin: const EdgeInsets.symmetric(horizontal: 30),
             child: ListView(
               children: [
+                const Padding(padding: EdgeInsets.only(top: 10)),
                 GestureDetector(
                   onTap: () {
                     setState(() {
@@ -75,6 +76,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         borderRadius: BorderRadius.circular(20),
                       ),
                       child: const TextField(
+                        obscureText: true,
                         decoration: InputDecoration(
                           icon: Icon(
                             Icons.lock,
@@ -82,6 +84,8 @@ class _SignUpPageState extends State<SignUpPage> {
                           ),
                           hintText: 'Enter Password',
                           border: InputBorder.none,
+                          suffixIcon:
+                              Icon(Icons.visibility, color: Colors.white),
                         ),
                       ),
                     ),
@@ -93,6 +97,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         borderRadius: BorderRadius.circular(20),
                       ),
                       child: const TextField(
+                        obscureText: true,
                         decoration: InputDecoration(
                           icon: Icon(
                             Icons.lock,
@@ -100,6 +105,8 @@ class _SignUpPageState extends State<SignUpPage> {
                           ),
                           hintText: 'Confirm Password',
                           border: InputBorder.none,
+                          suffixIcon:
+                              Icon(Icons.visibility, color: Colors.white),
                         ),
                       ),
                     ),
