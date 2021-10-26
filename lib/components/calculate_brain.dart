@@ -26,13 +26,13 @@ class CalculateBrain {
 
   String getAdvice() {
     if (_bmi >= 30) {
-      return 'Your health is on Risk!';
+      return 'Your health is on Risk!\nAppointment doctor ASAP! Get Treatment.';
     } else if (_bmi >= 25 && _bmi <= 29.9) {
-      return 'You should start exercise Now!';
+      return 'You should start exercise Now!\nStart dieting and make a exercise routine.';
     } else if (_bmi >= 18.5 && _bmi <= 24.9) {
       return 'Perfect! Keep it.';
     } else {
-      return 'Get some Food!';
+      return 'Get some Food!\nBe aware of your health.You are loosing it.';
     }
   }
 }
